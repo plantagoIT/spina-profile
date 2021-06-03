@@ -1,0 +1,20 @@
+<%= render Spina::UserInterface::HeaderComponent.new do |header| %>
+  <% header.actions do %>
+    <%= button_tag type: :submit, form: dom_id(@setup), class: 'btn btn-primary', data: {controller: "button", action: "button#loading", loading_message: t('spina.ui.saving')} do %>
+      <%= heroicon('check', style: :solid, class: 'w-5 h-5 mr-1 -ml-2') %>
+      <%=t 'spina.layout.save' %>
+    <% end %>
+  <% end %>
+<% end %>
+  
+<%= form_with model: @setup, url: spina.admin_setup_path(@setup), id: dom_id(@setup) do |f| %>
+  <div class="py-4 p-8">
+    <% @setup_fields.each do |field| %>
+      <div class='mt-5'>
+        <%= render Spina::Forms::LabelComponent.new(f, field) %>
+        <%= render Spina::Forms::TextFieldComponent.new(f, field, size: "lg") %>
+      </div>    
+    <% end %>
+  </div>
+<% end %>
+

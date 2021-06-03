@@ -1,0 +1,10 @@
+de:
+  spina:
+    setup:
+      title: 'Profil'
+    profiles:
+      admin:
+        hooks:
+          profile:
+            settings_secondary_navigation:
+              title: 'Profil'
