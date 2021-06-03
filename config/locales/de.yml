@@ -2,6 +2,7 @@ de:
   spina:
     setup:
       title: 'Profil'
+      save: 'Profil speichern'
     profiles:
       admin:
         hooks:
