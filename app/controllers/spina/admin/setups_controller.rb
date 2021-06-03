@@ -4,6 +4,8 @@ module Spina
         before_action :set_index_breadcrumb
         before_action :get_setup
 
+        # set the navigation to the settings part
+        admin_section :settings
 
         def edit
           @setup_fields = current_theme.setup_fields
