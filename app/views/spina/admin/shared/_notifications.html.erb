@@ -1,0 +1,48 @@
+<aside id='notifications'>
+  <% if flash[:notice] %>
+    <div class='notification animated fadeInLeft'>
+      <%= icon('info') %>
+      <div class='notification-message'>
+        <%= flash[:notice].html_safe %>
+        <small>
+          <%= flash[:notice_small].try(:html_safe) %>
+        </small>
+      </div>
+      <% link_to '#', data: {close_notification: true} do %>
+        <%= icon('cross') %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class='notification notification-danger animated fadeInLeft'>
+      <%= icon('exclamation') %>
+      <div class='notification-message'>
+        <%= flash[:alert].html_safe %>
+        <small>
+          <%= flash[:alert_small].try(:html_safe) %>
+        </small>
+      </div>
+      <% link_to '#', data: {close_notification: true} do %>
+        <%= icon('cross') %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if flash[:success] %>
+    <div class='notification notification-success animated fadeInLeft'>
+      <%= icon('check') %>
+      <div class='notification-message'>
+        <%= flash[:success].html_safe %>
+        <small>
+          <%= flash[:success_small].try(:html_safe) %>
+        </small>
+      </div>
+      <% link_to '#', data: {close_notification: true} do %>
+        <%= icon('cross') %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= yield(:notifications) if content_for?(:notifications) %>
+</aside>
