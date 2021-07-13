@@ -1,0 +1,14 @@
+html, body{
+  .button{
+    cursor: pointer
+  }
+  #main{
+    &.maximized{
+      .well .dd#mounts_list ol{
+        li:nth-child(even){
+          background: #fafafc;
+        }
+      }
+    }
+  }
+}
