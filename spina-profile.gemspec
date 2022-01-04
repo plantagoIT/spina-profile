@@ -1,4 +1,4 @@
-$:.push File.expand_path('lib', __dir__)
+$LOAD_PATH.push File.expand_path('lib', __dir__)
 
 # Maintain your gem's version:
 require 'spina/profile/version'
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = 'This extension allows to dynamically create a profile for the Spina CMS with customizable fields for addresses, social media or similar stuff.'
   s.licenses    = ['GPLv3']
 
-  s.files = Dir['{app,config,db,lib,test}/**/*'] + ['Rakefile', 'README.md']
+  s.files = Dir['{app,config,db,lib}/**/*'] + ['README.md']
 
-  s.add_dependency 'spina'
+  s.add_runtime_dependency 'spina'
 end
