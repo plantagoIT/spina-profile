@@ -2,8 +2,8 @@ require 'spina'
 
 module Spina
   module Profile
-    load 'spina/profile/engine'
-    load 'spina/profile/configuration'
-    load 'spina/profile/theme'
+    require 'spina/profile/engine'
+    require 'spina/profile/configuration'
+    require 'spina/profile/theme'
   end
 end
